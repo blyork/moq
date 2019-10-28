@@ -51,7 +51,7 @@ type {{.InterfaceName}}Mock struct {
 	}
 
 {{- range .Methods }}
-	lock{{$obj.InterfaceName}}Mock{{.Name}}	sync.RWMutex
+	lock{{.Name}}	sync.RWMutex
 {{- end }}
 }
 {{ range .Methods }}
@@ -69,9 +69,9 @@ func (mock *{{$obj.InterfaceName}}Mock) {{.Name}}({{.Arglist}}) {{.ReturnArglist
 		{{ .Name | Exported }}: {{ .Name }},
 		{{- end }}
 	}
-	mock.lock{{$obj.InterfaceName}}Mock{{.Name}}.Lock()
+	mock.lock{{.Name}}.Lock()
 	mock.calls.{{.Name}} = append(mock.calls.{{.Name}}, callInfo)
-	mock.lock{{$obj.InterfaceName}}Mock{{.Name}}.Unlock()
+	mock.lock{{.Name}}.Unlock()
 {{- if .ReturnArglist }}
 	return mock.{{.Name}}Func({{.ArgCallList}})
 {{- else }}
@@ -92,9 +92,9 @@ func (mock *{{$obj.InterfaceName}}Mock) {{.Name}}Calls() []struct {
 		{{ .Name | Exported }} {{ .Type }}
 		{{- end }}
 	}
-	mock.lock{{$obj.InterfaceName}}Mock{{.Name}}.RLock()
+	mock.lock{{.Name}}.RLock()
 	calls = mock.calls.{{.Name}}
-	mock.lock{{$obj.InterfaceName}}Mock{{.Name}}.RUnlock()
+	mock.lock{{.Name}}.RUnlock()
 	return calls
 }
 {{ end -}}
