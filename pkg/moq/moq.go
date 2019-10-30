@@ -271,6 +271,14 @@ func (m *method) ReturnArglist() string {
 	return strings.Join(params, ", ")
 }
 
+func (m *method) ReturnArgCallList() string {
+	params := make([]string, len(m.Returns))
+	for i, p := range m.Returns {
+		params[i] = p.CallName()
+	}
+	return strings.Join(params, ", ")
+}
+
 type param struct {
 	Name     string
 	Type     string
