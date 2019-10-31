@@ -1,4 +1,4 @@
-![moq logo](moq-logo-small.png) [![Build Status](https://travis-ci.org/matryer/moq.svg?branch=master)](https://travis-ci.org/matryer/moq) [![Go Report Card](https://goreportcard.com/badge/github.com/matryer/moq)](https://goreportcard.com/report/github.com/matryer/moq)
+![moq logo](moq-logo-small.png) [![Build Status](https://travis-ci.org/matryer/moq.svg?branch=master)](https://travis-ci.org/matryer/moq) [![Go Report Card](https://goreportcard.com/badge/github.com/blyork/moq)](https://goreportcard.com/report/github.com/blyork/moq)
 
 Interface mocking tool for go generate.
 
@@ -18,7 +18,7 @@ You can read more in the [Meet Moq blog post](http://bit.ly/meetmoq).
 
 To start using Moq, just run go get:
 ```
-$ go get github.com/matryer/moq
+$ go get github.com/blyork/moq
 ```
 
 ### Usage

@@ -6,4 +6,3 @@ import "github.com/matryer/buildconstraints"
 type Service interface {
 	DoSomething(buildconstraints.SomeType) error
 }
-

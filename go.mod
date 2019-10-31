@@ -1,4 +1,4 @@
-module github.com/matryer/moq
+module github.com/blyork/moq
 
 go 1.12
 
