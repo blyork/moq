@@ -9,7 +9,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/blyork/moq/pkg/moq"
+	"github.com/blyork/moq/v2/pkg/moq"
 )
 
 func main() {

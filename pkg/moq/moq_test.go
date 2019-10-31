@@ -133,7 +133,7 @@ func TestMoqExplicitPackageWithStaticCheck(t *testing.T) {
 
 // TestVeradicArguments tests to ensure variadic work as
 // expected.
-// see https://github.com/blyork/moq/issues/5
+// see https://github.com/blyork/moq/v2/issues/5
 func TestVariadicArguments(t *testing.T) {
 	m, err := New("testpackages/variadic", "")
 	if err != nil {
@@ -218,7 +218,7 @@ func TestImports(t *testing.T) {
 	s := buf.String()
 	var strs = []string{
 		`	"sync"`,
-		`	"github.com/blyork/moq/pkg/moq/testpackages/imports/one"`,
+		`	"github.com/blyork/moq/v2/pkg/moq/testpackages/imports/one"`,
 	}
 	for _, str := range strs {
 		if !strings.Contains(s, str) {
@@ -281,7 +281,7 @@ func TestVendoredBuildConstraints(t *testing.T) {
 	}
 }
 
-// TestDotImports tests for https://github.com/blyork/moq/issues/21.
+// TestDotImports tests for https://github.com/blyork/moq/v2/issues/21.
 func TestDotImports(t *testing.T) {
 	preDir, err := os.Getwd()
 	if err != nil {
